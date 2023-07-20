@@ -21,7 +21,7 @@ class Reset extends StatelessWidget {
           )),
       body: SafeArea(
           child: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20, bottom: 80),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -38,6 +38,9 @@ class Reset extends StatelessWidget {
                     color: Color.fromRGBO(97, 31, 64, 20)),
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             const Center(
               child: Text(
                 'Enter your new password below',
@@ -52,24 +55,44 @@ class Reset extends StatelessWidget {
                 SizedBox(
                   width: 60,
                 ),
-                Text('New Password:'),
+                Text('New Password',
+                    style: TextStyle(color: Color.fromRGBO(97, 31, 64, 20))),
               ],
             ),
             const Padding(
               padding: EdgeInsets.only(left: 15, right: 15, bottom: 20),
-              child: TextField(),
+              child: TextField(
+                obscureText: true,
+                keyboardType: TextInputType.visiblePassword,
+                decoration: InputDecoration(
+                  suffixIcon: Icon(
+                    Icons.visibility,
+                    color: Color.fromRGBO(97, 31, 64, 20),
+                  ),
+                ),
+              ),
             ),
             const Row(
               children: [
                 SizedBox(
                   width: 60,
                 ),
-                Text('Confirm password:'),
+                Text('Confirm password',
+                    style: TextStyle(color: Color.fromRGBO(97, 31, 64, 20))),
               ],
             ),
             const Padding(
               padding: EdgeInsets.only(left: 15, right: 15, bottom: 20),
-              child: TextField(),
+              child: TextField(
+                obscureText: true,
+                keyboardType: TextInputType.visiblePassword,
+                decoration: InputDecoration(
+                  suffixIcon: Icon(
+                    Icons.visibility,
+                    color: Color.fromRGBO(97, 31, 64, 20),
+                  ),
+                ),
+              ),
             ),
             const SizedBox(
               height: 15,

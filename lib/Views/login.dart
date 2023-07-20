@@ -24,16 +24,13 @@ class LogIn extends StatelessWidget {
             )),
         body: SafeArea(
             child: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
+          padding: const EdgeInsets.only(left: 20, right: 20, bottom: 120),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Icon(
                 Icons.person,
                 size: 90,
-              ),
-              const SizedBox(
-                height: 30,
               ),
               const Text(
                 'WELCOME BACK ',
@@ -43,7 +40,7 @@ class LogIn extends StatelessWidget {
                     color: Color.fromRGBO(97, 31, 64, 20)),
               ),
               const SizedBox(
-                height: 15,
+                height: 10,
               ),
               const Text(
                 'Log in to your account',
@@ -56,10 +53,17 @@ class LogIn extends StatelessWidget {
                   child: Column(
                 children: [
                   TextFormField(
+                    keyboardType: TextInputType.name,
                     decoration: InputDecoration(
-                      label: const Text('Username'),
+                      label: const Text('Username',
+                          style:
+                              TextStyle(color: Color.fromRGBO(97, 31, 64, 20))),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
+                      ),
+                      suffixIcon: const Icon(
+                        Icons.person,
+                        color: Color.fromRGBO(97, 31, 64, 20),
                       ),
                     ),
                   ),
@@ -67,10 +71,19 @@ class LogIn extends StatelessWidget {
                     height: 10,
                   ),
                   TextFormField(
+                    keyboardType: TextInputType.visiblePassword,
+                    obscureText: true,
                     decoration: InputDecoration(
-                      label: const Text('Password'),
+                      label: const Text(
+                        'Password',
+                        style: TextStyle(color: Color.fromRGBO(97, 31, 64, 20)),
+                      ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
+                      ),
+                      suffixIcon: const Icon(
+                        Icons.visibility,
+                        color: Color.fromRGBO(97, 31, 64, 20),
                       ),
                     ),
                   ),

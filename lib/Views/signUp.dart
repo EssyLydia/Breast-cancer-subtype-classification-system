@@ -24,7 +24,11 @@ class SignUp extends StatelessWidget {
             )),
         body: SafeArea(
             child: Padding(
-          padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+          padding: const EdgeInsets.only(
+            left: 20.0,
+            right: 20.0,
+            bottom: 120,
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -46,10 +50,17 @@ class SignUp extends StatelessWidget {
                   child: Column(
                 children: [
                   TextFormField(
+                    keyboardType: TextInputType.name,
                     decoration: InputDecoration(
-                      label: const Text('Username'),
+                      label: const Text('Username',
+                          style:
+                              TextStyle(color: Color.fromRGBO(97, 31, 64, 20))),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
+                      ),
+                      suffixIcon: const Icon(
+                        Icons.person,
+                        color: Color.fromRGBO(97, 31, 64, 20),
                       ),
                     ),
                   ),
@@ -57,10 +68,17 @@ class SignUp extends StatelessWidget {
                     height: 10,
                   ),
                   TextFormField(
+                    keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                      label: const Text('Email'),
+                      label: const Text('Email',
+                          style:
+                              TextStyle(color: Color.fromRGBO(97, 31, 64, 20))),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
+                      ),
+                      suffixIcon: const Icon(
+                        Icons.email,
+                        color: Color.fromRGBO(97, 31, 64, 20),
                       ),
                     ),
                   ),
@@ -68,10 +86,18 @@ class SignUp extends StatelessWidget {
                     height: 10,
                   ),
                   TextFormField(
+                    keyboardType: TextInputType.visiblePassword,
+                    obscureText: true,
                     decoration: InputDecoration(
-                      label: const Text('Password'),
+                      label: const Text('Password',
+                          style:
+                              TextStyle(color: Color.fromRGBO(97, 31, 64, 20))),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
+                      ),
+                      suffixIcon: const Icon(
+                        Icons.visibility,
+                        color: Color.fromRGBO(97, 31, 64, 20),
                       ),
                     ),
                   ),
@@ -79,10 +105,18 @@ class SignUp extends StatelessWidget {
                     height: 10,
                   ),
                   TextFormField(
+                    keyboardType: TextInputType.visiblePassword,
+                    obscureText: true,
                     decoration: InputDecoration(
-                      label: const Text('Confirm Password'),
+                      label: const Text('Confirm Password',
+                          style:
+                              TextStyle(color: Color.fromRGBO(97, 31, 64, 20))),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
+                      ),
+                      suffixIcon: const Icon(
+                        Icons.visibility,
+                        color: Color.fromRGBO(97, 31, 64, 20),
                       ),
                     ),
                   ),
