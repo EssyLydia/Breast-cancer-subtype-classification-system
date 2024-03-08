@@ -110,7 +110,7 @@ class LogIn extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  Get.to(() => const Diagnosis());
+                  Get.to(() => const Diagnosis(result: '',));
                 },
                 child: Container(
                   width: 500,

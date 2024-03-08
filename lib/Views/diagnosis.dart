@@ -7,11 +7,15 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class Diagnosis extends StatelessWidget {
-  const Diagnosis({super.key});
+   final String result;
+   const Diagnosis({Key? key, required this.result}) : super(key: key);
+  // const Diagnosis({super.key});
 
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(DiagnosisController());
+    String displayText = 'Classification Result: $result';
+    
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.white,
@@ -132,9 +136,15 @@ class Diagnosis extends StatelessWidget {
                       color: Color.fromRGBO(97, 31, 64, 20)),
                 ),
                 const Text(
-                  'Carcinoma in situ',
-                  style: TextStyle(fontSize: 14),
+                  displayText,
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Color.fromRGBO(97, 31, 64, 20)
+                    ),
                 )
+          
+
+                
               ],
             ),
           ],

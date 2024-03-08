@@ -1,6 +1,7 @@
 import "package:cancer_app/Views/home.dart";
 import "package:flutter/material.dart";
 import "package:get/get.dart";
+import 'dart:ui';
 
 void main() {
   runApp(const MyApp());
