@@ -135,9 +135,9 @@ class Diagnosis extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Color.fromRGBO(97, 31, 64, 20)),
                 ),
-                const Text(
+                Text(
                   displayText,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
                     color: Color.fromRGBO(97, 31, 64, 20)
                     ),

@@ -6,6 +6,7 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:image/image.dart' as img;
 
+
 class DiagnosisController extends GetxController {
   var selectedPath = ''.obs;
 
@@ -34,7 +35,7 @@ class DiagnosisController extends GetxController {
   }
 
   Future<void> classifyImage() async {
-     if (_interpreter == null || selectedPath.value.isEmpty) return;
+     if (selectedPath.value.isEmpty) return;
 
     // Preprocess the image
     var input = await preprocessImage(selectedPath.value);
