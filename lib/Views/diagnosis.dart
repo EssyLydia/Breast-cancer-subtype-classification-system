@@ -13,8 +13,9 @@ class Diagnosis extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(DiagnosisController());
-    String displayText = 'Classification Result: $result';
+    //final controller = Get.put(DiagnosisController());
+     final DiagnosisController controller = Get.find<DiagnosisController>();
+     String displayText = 'Classification Result: $result';
     
     return Scaffold(
       appBar: AppBar(

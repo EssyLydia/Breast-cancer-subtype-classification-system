@@ -37,7 +37,12 @@ class HomePage extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Get.to(() => const SignUp());
+              Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const SignUp()),
+  );
+              
+              //Get.to(() => const SignUp());
             },
             child: Container(
               width: 500,

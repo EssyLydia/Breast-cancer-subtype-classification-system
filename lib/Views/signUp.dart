@@ -1,8 +1,7 @@
+import 'package:cancer_app/Views/home.dart';
+import 'package:cancer_app/Views/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'home.dart';
-import 'login.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -10,20 +9,20 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            backgroundColor: Colors.white,
-            elevation: 0,
-            leading: IconButton(
-              icon: const Icon(
-                Icons.arrow_back,
-                color: Colors.black,
-              ),
-              onPressed: () {
-                Get.to(() => const HomePage());
-              },
-            )),
-        body: SafeArea(
-            child: Padding(
+      appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Get.to(() => const HomePage());
+            },
+          )),
+      body: SafeArea(
+        child: Padding(
           padding: const EdgeInsets.only(
             left: 20.0,
             right: 20.0,
@@ -130,7 +129,13 @@ class SignUp extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  Get.to(() => const LogIn());
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LogIn(),
+                    ),
+                  );
+                  // Get.to(() => const LogIn());
                 },
                 child: Container(
                   width: 500,
@@ -160,16 +165,27 @@ class SignUp extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(() => const LogIn());
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LogIn(),
+                        ),
+                      );
                     },
-                    child: const Text('Login',
-                        style:
-                            TextStyle(fontSize: 16, color: Colors.blueAccent)),
-                  )
+                    child: const Text(
+                      'Login',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.blueAccent,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ],
           ),
-        )));
+        ),
+      ),
+    );
   }
 }
