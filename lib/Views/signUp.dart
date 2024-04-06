@@ -163,8 +163,8 @@ class SignUp extends StatelessWidget {
                     'Alreday have an account?',
                     style: TextStyle(fontSize: 16),
                   ),
-                  InkWell(
-                    onTap: () {
+                  TextButton(
+                    onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(

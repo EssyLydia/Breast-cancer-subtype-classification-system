@@ -9,12 +9,6 @@ import 'dart:convert';
 class DiagnosisController extends GetxController {
   var selectedPath = ''.obs;
 
- 
-
-   //@override
-  //void onInit() {
-    //super.onInit();
-  //}
 
   Future pickImage(ImageSource source) async {
     final imagePath = await ImagePicker().pickImage(source: source);
