@@ -14,7 +14,8 @@ class Diagnosis extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //final controller = Get.put(DiagnosisController());
-     final DiagnosisController controller = Get.find<DiagnosisController>();
+
+     final DiagnosisController controller =  DiagnosisController();
      String displayText = 'Classification Result: $result';
     
     return Scaffold(

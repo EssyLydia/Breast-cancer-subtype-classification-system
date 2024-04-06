@@ -10,20 +10,27 @@ class LogIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            backgroundColor: Colors.white,
-            elevation: 0,
-            leading: IconButton(
-              icon: const Icon(
-                Icons.arrow_back,
-                color: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const SignUp(),
               ),
-              onPressed: () {
-                Get.to(() => const SignUp());
-              },
-            )),
-        body: SafeArea(
-            child: Padding(
+            );
+            // Get.to(() => const SignUp());
+          },
+        ),
+      ),
+      body: SafeArea(
+        child: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20, bottom: 120),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -50,48 +57,50 @@ class LogIn extends StatelessWidget {
                 height: 15,
               ),
               Form(
-                  child: Column(
-                children: [
-                  TextFormField(
-                    keyboardType: TextInputType.name,
-                    decoration: InputDecoration(
-                      label: const Text('Username',
+                child: Column(
+                  children: [
+                    TextFormField(
+                      keyboardType: TextInputType.name,
+                      decoration: InputDecoration(
+                        label: const Text('Username',
+                            style: TextStyle(
+                                color: Color.fromRGBO(97, 31, 64, 20))),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        suffixIcon: const Icon(
+                          Icons.person,
+                          color: Color.fromRGBO(97, 31, 64, 20),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    TextFormField(
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        label: const Text(
+                          'Password',
                           style:
-                              TextStyle(color: Color.fromRGBO(97, 31, 64, 20))),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      suffixIcon: const Icon(
-                        Icons.person,
-                        color: Color.fromRGBO(97, 31, 64, 20),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  TextFormField(
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      label: const Text(
-                        'Password',
-                        style: TextStyle(color: Color.fromRGBO(97, 31, 64, 20)),
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      suffixIcon: const Icon(
-                        Icons.visibility,
-                        color: Color.fromRGBO(97, 31, 64, 20),
+                              TextStyle(color: Color.fromRGBO(97, 31, 64, 20)),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        suffixIcon: const Icon(
+                          Icons.visibility,
+                          color: Color.fromRGBO(97, 31, 64, 20),
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                ],
-              )),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                  ],
+                ),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -110,7 +119,17 @@ class LogIn extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  Get.to(() => const Diagnosis(result: '',));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Diagnosis(result: ''),
+                    ),
+                  );
+                  // Get.to(
+                  //   () => const Diagnosis(
+                  //     result: '',
+                  //   ),
+                  // );
                 },
                 child: Container(
                   width: 500,
@@ -138,18 +157,24 @@ class LogIn extends StatelessWidget {
                     'Do not have an account?',
                     style: TextStyle(fontSize: 16),
                   ),
-                  InkWell(
-                    onTap: () {
+                  TextButton(
+                    onPressed: () {
                       Get.to(() => const SignUp());
                     },
-                    child: const Text('SignUp',
-                        style:
-                            TextStyle(fontSize: 16, color: Colors.blueAccent)),
+                    child: const Text(
+                      'SignUp',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.blueAccent,
+                      ),
+                    ),
                   )
                 ],
               ),
             ],
           ),
-        )));
+        ),
+      ),
+    );
   }
 }
